@@ -92,29 +92,39 @@ b.  Usa las funciones **dim, head, tail, str** para una primera visión de los c
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
+library(MASS)
+library(robustbase)
+mammals = mammals
+Animals2 = Animals2
+
+# Visión del conjunto mammals
+dim(mammals)
+head(mammals)
+tail(mammals)
+str(mammals)
+
+# Visión del conjunto Animals2
+dim(Animals2)
+head(Animals2)
+tail(Animals2)
+str(Animals2)
 
 
+# Nombres de filas y columas de...
+# mammals
+rownames(mammals)
+colnames(mammals)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Animals2
+rownames(Animals2)
+colnames(Animals2)
 
 ```
 
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
 
 ```{r}
-
+commonAnimals= intersect(rownames(Animals2),rownames(mammals))
 
 
 
@@ -125,7 +135,14 @@ d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
 ```{r}
+# Animales en Animals2 pero no en mammals 
+setdiff(rownames(Animals2),rownames(mammals))
+# Son siete 
 
+
+#Animales en mammals pero no en Animals2
+setdiff(rownames(mammals),rownames(Animals2))
+# Son cuatro
 
 
 
@@ -136,13 +153,15 @@ e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. �
 e.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
 
 ```{r}
+mammals["Arctic fox",]
+Animals2["Artic ground squirrel",]
 
 
+mammals["Arctic ground squirrel",]
+Animals2["Artic ground squirrel",]
 
-
-
-
-
+mammals["Mole rat",]
+Animals2["Mole",]
 
 
 
