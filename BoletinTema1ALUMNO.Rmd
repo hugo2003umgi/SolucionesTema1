@@ -209,29 +209,20 @@ library()
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
+library(MASS)
+# Cabbages
+dim(cabbages)
+head(cabbages)
+tail(cabbages)
+str(cabbages)
 
+sum(is.na(cabbages))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#Chile
+dim(Chile)
+head(Chile)
+tail(Chile)
+str(Chile)
 
 
 
